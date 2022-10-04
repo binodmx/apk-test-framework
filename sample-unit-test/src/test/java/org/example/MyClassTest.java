@@ -1,14 +1,15 @@
 package org.example;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.testng.Assert.assertEquals;
 
 public class MyClassTest {
 
     @Test
-    public void hello() {
+    public void testHello() {
         MyClass myClass = new MyClass();
-        assertEquals("Hello, there!", myClass.hello());
+        String expectedValue = "Hello, there!";
+        assertEquals(myClass.hello(), expectedValue);
     }
 }
