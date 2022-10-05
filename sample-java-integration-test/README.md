@@ -16,7 +16,7 @@ Open Maven tool window in IntelliJ IDEA and execute `verify` phase of the Maven 
 
 ## Using CLI commands
 
-Go to the relevant root directory of the module and execute following commands as per requirement. For more information refer [Maven falesafe plugin usage](https://maven.apache.org/surefire/maven-failsafe-plugin/usage.html) or [running a single test](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/single-test.html).
+Go to the relevant root directory of the module and execute following commands as per requirement. For more information refer [Maven failsafe plugin usage](https://maven.apache.org/surefire/maven-failsafe-plugin/usage.html) or [running a single test](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/single-test.html).
 
 1. To run all unit tests: `mvn verify`
 2. To run specific integration test class: `mvn -Dit.test=<testClassName> verify`
