@@ -4,6 +4,9 @@ Make sure you have installed [IntelliJ IDEA](https://www.jetbrains.com/idea/) an
 
 Follow the steps below to write unit tests.
 1. Right click on class name --> Show Context Actions --> Create Test.
+
+![image](https://user-images.githubusercontent.com/36144069/194097886-af2a2845-3325-4338-a79e-13e3e7f9b4aa.png)
+
 2. Make sure following properties are set.
     1. Testing library: `TestNG`
     2. Class name: `<className>Test`
