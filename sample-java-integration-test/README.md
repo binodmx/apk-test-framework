@@ -1,5 +1,7 @@
 # Writing Java integration tests
 
+Make sure you have installed [IntelliJ IDEA](https://www.jetbrains.com/idea/) and [SonarLint](https://www.sonarsource.com/products/sonarlint/) plugin in your computer. Always resolve the SonarLint issues before submitting a commit. Note that [Maven Failsafe Plugin](https://maven.apache.org/surefire/maven-failsafe-plugin/index.html) and [TestNG](https://testng.org/doc/) framework are used to manage integration tests.
+
 # Running Java integration tests
 
 You can use IntelliJ IDEA [Run tool](https://www.jetbrains.com/help/idea/run-tool-window.html), [Maven tool](https://www.jetbrains.com/help/idea/maven-projects-tool-window.html), or Maven CLI commands to run integration tests.
