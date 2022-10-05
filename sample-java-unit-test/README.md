@@ -7,5 +7,8 @@ Follow the steps below to write unit tests.
 2. Make sure following properties are set
     1. Testing library: `TestNG`
     2. Class name: className + 'Test'
+
+![Screenshot from 2022-10-05 13-22-37](https://user-images.githubusercontent.com/36144069/194023075-970997f9-1c22-4727-8921-2f8cace5795a.png)
+
 3. Select methods which need to be tested and click OK
 4. Implement test logic for each test<methodName> methods
