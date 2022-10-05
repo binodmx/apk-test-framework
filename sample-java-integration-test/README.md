@@ -12,6 +12,8 @@ Click on play button on required test class or test method to run the integratio
 
 Open Maven tool window in IntelliJ IDEA and execute `verify` phase of the Maven Lifecycle.
 
+![image](https://user-images.githubusercontent.com/36144069/194096513-25e58241-ebcb-433d-a99c-71af36dfb3d4.png)
+
 ## Using CLI commands
 
 Go to the relevant root directory of the module and execute following commands as per requirement. For more information refer [Maven falesafe plugin usage](https://maven.apache.org/surefire/maven-failsafe-plugin/usage.html) or [running a single test](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/single-test.html).
