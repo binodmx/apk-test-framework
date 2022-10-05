@@ -1,6 +1,6 @@
 # Writing Java unit tests
 
-Make sure you have installed [IntelliJ IDEA](https://www.jetbrains.com/idea/) and [SonarLint](https://www.sonarsource.com/products/sonarlint/) plugin in your computer. Always resolve the SonarLint issues before submitting a commit. Note that [TestNG](https://testng.org/doc/) framework is used to write unit tests and [Jacoco](https://www.jacoco.org/jacoco/) is used to generate test reports.
+Make sure you have installed [IntelliJ IDEA](https://www.jetbrains.com/idea/) and [SonarLint](https://www.sonarsource.com/products/sonarlint/) plugin in your computer. Always resolve the SonarLint issues before submitting a commit. Note that [Maven Surefire Plugin](https://maven.apache.org/surefire/maven-surefire-plugin/index.html) and [TestNG](https://testng.org/doc/) framework are used to manage unit tests. [Jacoco](https://www.jacoco.org/jacoco/) plugin is used to generate test reports.
 
 Follow the steps below to write unit tests.
 1. Right click on class name --> Show Context Actions --> Create Test.
@@ -25,7 +25,7 @@ Click on play button on required test class or test method to run the unit test.
 
 ## Using Maven tool
 
-Open Maven tool window in IntelliJ IDEA and execute test phase of the Maven Lifecycle.
+Open Maven tool window in IntelliJ IDEA and execute `test` phase of the Maven Lifecycle.
 
 ![image](https://user-images.githubusercontent.com/36144069/194027289-b0e945e1-0c10-436b-b5f1-ee69ea781088.png)
 
