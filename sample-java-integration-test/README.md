@@ -12,11 +12,6 @@ Resource files (.json, .xml, .yml, .toml, .jar, .jks, .cer, ...) should be added
 - However, If the resource file is used different test packages, it should be added to `src/test/resources/common` 
 directory.
 
-### Mocking
-
-- REST APIs: https://rest-assured.io/
-- 
-
 # Running Java integration tests
 
 You can use IntelliJ IDEA [Run tool](https://www.jetbrains.com/help/idea/run-tool-window.html), [Maven tool](https://www.jetbrains.com/help/idea/maven-projects-tool-window.html), or Maven CLI commands to run integration tests.
