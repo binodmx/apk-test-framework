@@ -25,7 +25,7 @@ You can use IntelliJ IDEA [Run tool](https://www.jetbrains.com/help/idea/run-too
 
 Click on play button on required test class or test method to run the unit test.
 
-![image](https://user-images.githubusercontent.com/36144069/194028932-4ee20e5e-b5d6-49d1-9618-5cd57f22e6e6.png)
+![image (1)](https://user-images.githubusercontent.com/36144069/194227610-bd858b8f-e38d-47e8-9041-9128644556ae.png)
 
 ## Using Maven tool
 
