@@ -2,6 +2,21 @@
 
 Make sure you have installed [IntelliJ IDEA](https://www.jetbrains.com/idea/) and [SonarLint](https://www.sonarsource.com/products/sonarlint/) plugin in your computer. Always resolve the SonarLint issues before submitting a commit. Note that [Maven Failsafe Plugin](https://maven.apache.org/surefire/maven-failsafe-plugin/index.html) and [TestNG](https://testng.org/doc/) framework are used to manage integration tests.
 
+### Adding resource files
+
+Resource files (.json, .xml, .yml, .toml, .jar, .jks, .cer, ...) should be added to 
+`src/test/resources/<subDirectoryName>` directory with a proper file name that describes the resource file. 
+
+- Here, `subDirectoryName` is the last name of the test package name. For example, if the package name is 
+`org.example.it.restapi` then the `subDirectoryName` is `restapi`.
+- However, If the resource file is used different test packages, it should be added to `src/test/resources/common` 
+directory.
+
+### Mocking
+
+- REST APIs: https://rest-assured.io/
+- 
+
 # Running Java integration tests
 
 You can use IntelliJ IDEA [Run tool](https://www.jetbrains.com/help/idea/run-tool-window.html), [Maven tool](https://www.jetbrains.com/help/idea/maven-projects-tool-window.html), or Maven CLI commands to run integration tests.

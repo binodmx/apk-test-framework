@@ -14,7 +14,8 @@ Follow the steps below to write unit tests.
 ![Screenshot from 2022-10-05 13-22-37](https://user-images.githubusercontent.com/36144069/194023075-970997f9-1c22-4727-8921-2f8cace5795a.png)
 
 3. Select methods which need to be tested and click OK.
-4. Implement test logic for each `test<methodName>` methods.
+4. Add a proper description to the `@Test(description = "<description>")` annotation.
+5. Implement test logic for each `test<methodName>` methods.
 
 # Running Java unit tests
 
