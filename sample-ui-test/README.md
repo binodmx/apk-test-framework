@@ -22,3 +22,24 @@
     a. If required page objects not available you can create them under pages folders
     b. If you need new element locators update those in existing page objects
 4. Import required business fucntions
+
+  Sample test spec file with page objects and business function
+  <image>
+  Sample business function
+  <image>
+    
+## Best practices
+- Do not hardcode element locators inside test spec files, all locatores should be located in relevant Page Objects
+- USer available Common Business functions inside you test script
+ -- E.g. Menu navigation, Login
+- Naming conventions
+  -- Test (Spec file) name in belo format
+  --- <<TestID>>_MeaningfullTestName
+    
+# Test Execution
+| Package name  | Content |
+| ------------- | ------------- |
+| Run all test spec files in headless mode  | npm run test  |
+| Run all test spec files in GUI mode  | npm run test:gui|
+| Define the browser  | <>  --browser=chrome --headed|
+| Open Cypress   | npx cypress open |
