@@ -1,0 +1,26 @@
+/target/
+### Gradle ###
+.gradle
+build/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+**/target
+**/test-output
+*.project
+*.classpath
+*.settings
+*bin
+*debug.log
+*.idea
+**test-output/
+ESTAssuredAutomation/target
+
+### Gradle ###
+.gradle
+build/
+
