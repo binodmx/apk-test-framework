@@ -22,6 +22,7 @@ build() {
     go test ./impl -v | tee ../../apkctl-ut-results.log
     go build apkctl.go
     cd ../..
+    # - docker build -t wso2/my-app .
 }
 
 # $1: apkctl path
