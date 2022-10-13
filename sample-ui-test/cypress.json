@@ -3,7 +3,7 @@
     "pageLoadTimeout": 100000,
     "defaultCommandTimeout": 100000,
     "largeTimeout": 100000,
-    "baseUrl": "https://localhost:9443",
+    "baseUrl": "https://am.wso2.com",
     "screenshotsFolder": "cypress/screenshots",
     "screenshotOnRunFailure":true,
     "experimentalInteractiveRunEvents": true,

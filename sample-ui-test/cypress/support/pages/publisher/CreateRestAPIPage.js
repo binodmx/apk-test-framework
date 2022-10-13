@@ -29,7 +29,7 @@ class CreateRestAPIPage {
     static getAPIContextTextBox(){
         return cy.get('#itest-id-apicontext-input')
     }
-    static getAPIVesionTextBox(){
+    static getAPIVersionTextBox(){
         return cy.get('#itest-id-apiversion-input')
     }
     static getAPIEndpointTextBox(){

@@ -38,6 +38,9 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
+                    <systemPropertyVariables>
+                        <endpoint>${endpoint}</endpoint>
+                    </systemPropertyVariables>
                 </configuration>
                 <executions>
                     <execution>

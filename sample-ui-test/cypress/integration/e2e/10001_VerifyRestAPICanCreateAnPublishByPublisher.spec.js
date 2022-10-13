@@ -23,15 +23,15 @@ import APIBasicInfoPage from "../../support/pages/publisher/APIBasicInfoPage";
 import DeploymentsPage from "../../support/pages/publisher/DeploymentsPage";
 import LifecyclePage from "../../support/pages/publisher/LifecyclePage";
 
-describe("10001 : Verify Rest API can created and publish sucessfully by publisher", () => {
+describe("10001 : Verify Rest API can created and publish successfully by publisher", () => {
     it("Create and publish Rest API", () => {
        Login.loginToPublisher('admin','admin') 
 
        CreateRestAPIPage.visitAPIsPage()
        CreateRestAPIPage.getAPINameTextBox().type("PizzaShack")
        CreateRestAPIPage.getAPIContextTextBox().type("/pizzashack")
-       CreateRestAPIPage.getAPIVesionTextBox().type("1.0.0")
-       CreateRestAPIPage.getAPIEndpointTextBox().type("https://localhost:9443/am/sample/pizzashack/v1/api/")
+       CreateRestAPIPage.getAPIVersionTextBox().type("1.0.0")
+       CreateRestAPIPage.getAPIEndpointTextBox().type("https://am.wso2.com/am/sample/pizzashack/v1/api/")
        CreateRestAPIPage.getAPICreateButton().click()
        cy.contains("API created successfully")
 
