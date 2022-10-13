@@ -3,8 +3,6 @@ package org.apim.v41;
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;
 
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.annotations.AfterTest;

@@ -4,7 +4,7 @@ echo "tesh.sh executing started..."
 set -o xtrace
 
 HOME=`pwd`
-TEST_SCRIPT=test.sh
+TEST_SCRIPT=apim-apk-test.sh
 MVNSTATE=1
 
 function usage()
