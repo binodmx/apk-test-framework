@@ -4,7 +4,7 @@
 # ----------------------------------------------------------------------------------------------------------------------
 # Install Git, Docker, Helm and Kubernetes client.
 # Setup Kubernetes cluster.
-# Install NGINX Ingress Controller.
+# Install NGINX Ingress Controller. (opt:- minikube addons enable ingress, minikube tunnel)
 # ----------------------------------------------------------------------------------------------------------------------
 
 repos="https://github.com/BLasan/APKCTL-Demo"
@@ -36,6 +36,7 @@ build() {
 deploy_apk() {
     cd APKCTL-Demo/CTL
     ./apkctl install platform
+    echo "Waiting until all pods are ready..."
     kubectl wait --for=condition=ready pod --selector=app.kubernetes.io/release=apk-test --timeout=480s
     cd ../..
 }
@@ -50,22 +51,22 @@ undeploy_apk() {
 # $3: run cypress tests?
 run_tests() {
     # verify the deployment
-    kubectl wait --for=condition=ready pod --selector=app.kubernetes.io/component=controller --timeout=480s
+    kubectl wait --for=condition=ready pod --selector=app.kubernetes.io/release=apk-test --timeout=480s
+    IP=http://`kubectl get ing -n default | awk '(NR==2) {print $4}'`
 
     # run apkctl tests
     if [ $1 = "true" ]
     then
-        cd APKCTL-Demo/CTL
-        go test ./integration | tee apkctl-it-results.log
-        cd ../..
+        cd APKCTL-Demo/CTL/integration
+        go test  -v | tee apkctl-test-results.log
+        cd ../../..
     fi
 
     # run API tests
     if [ $2 = "true" ]
     then
-        cd carbon-apimgt
-        git checkout apk-refactor
-        mvn clean verify | tee ../api-test-results.log
+        cd sample-java-integration-test
+        mvn clean verify -Dit.test=PublisherDSIT -Dendpoint=$IP | tee ../rest-api-test-results.log
         cd ..
     fi
 
@@ -80,6 +81,6 @@ clone_repos $repos
 build
 # cluster info should be set in ~/.kube/config
 deploy_apk
-run_tests true false false
+run_tests false true false
 undeploy_apk
 clean_repos $repos
