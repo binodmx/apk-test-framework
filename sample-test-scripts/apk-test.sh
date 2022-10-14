@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# Prerequisites
+# ----------------------------------------------------------------------------------------------------------------------
+# Install Git, Docker, Helm and Kubernetes client.
+# Setup Kubernetes cluster.
+# Install NGINX Ingress Controller.
+# ----------------------------------------------------------------------------------------------------------------------
+
 repos="https://github.com/BLasan/APKCTL-Demo"
 
 clone_repos() {
@@ -27,7 +34,10 @@ build() {
 
 # $1: apkctl path
 deploy_apk() {
-    ./APKCTL-Demo/CTL/apkctl install platform
+    cd APKCTL-Demo/CTL
+    ./apkctl install platform
+    kubectl wait --for=condition=ready pod --selector=app.kubernetes.io/release=apk-test --timeout=480s
+    cd ../..
 }
 
 # $1: apkctl path
