@@ -25,7 +25,26 @@ public class TC101_VerifyDevportalUserCanCreateAnApplicationIT {
 
 	@Test
 	void createApplication() {
-		Response response = given().relaxedHTTPSValidation().auth().preemptive().basic("admin", "admin")
+
+		Response credentialsResponse = given().relaxedHTTPSValidation()
+				.auth().preemptive().basic("admin", "admin")
+				.contentType("application/json")
+				.body("{ \"callbackUrl\": \"www.google.lk\", \"clientName\": \"rest_api_admin\", " +
+						"\"owner\": \"admin\", \"grantType\": \"password refresh_token\", \"saasApp\": true }")
+				.when().post(endpoint + "/client-registration/v0.17/register");
+
+		Response tokenResponse = given().relaxedHTTPSValidation()
+				.auth().preemptive().basic(credentialsResponse.getBody().jsonPath().get("clientId"),
+						credentialsResponse.getBody().jsonPath().get("clientSecret"))
+				.contentType("application/x-www-form-urlencoded")
+				.formParam("grant_type", "password")
+				.formParam("username", "admin")
+				.formParam("password", "admin")
+				.formParam("scope", "apim:api_view apim:api_create apim:subscribe apim:subscription_block")
+				.when().post(endpoint + "/oauth2/token");
+
+		Response response = given().relaxedHTTPSValidation()
+				.auth().preemptive().oauth2(tokenResponse.getBody().jsonPath().get("access_token"))
 				.contentType("application/json")
 				.body("{\"name\":\"testApp2\",\"throttlingPolicy\":\"10PerMin\",\"description\":\"desc\",\"tokenType" +
 						"\":\"JWT\",\"groups\":null,\"attributes\":{}}")

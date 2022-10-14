@@ -16,8 +16,8 @@ echo "Adding DNS record mapping..."
 kubectl get ing -n default | awk '(NR>1) {print $4, $3}' | sudo tee -a /etc/hosts
 echo "Running integration tests..."
 cd ../sample-java-integration-test
-mvn -Dit.test=TC101_VerifyDevportalUserCanCreateAnApplicationIT -Dendpoint=https://am.wso2.com verify | tee apim-it-results.log
-echo "Uninstalling apim..."
+mvn -Dit.test=TC101_VerifyDevportalUserCanCreateAnApplicationIT -Dendpoint=https://am.wso2.com clean verify | tee apim-it-results.log
+#echo "Uninstalling apim..."
 helm delete am-single
 kubectl delete --force all --all
 kubectl delete --force pv --all
